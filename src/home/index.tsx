@@ -49,10 +49,14 @@ function Home() {
     }
   };
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  // const handleChangePage = (event: unknown, newPage: number) => {
+  //   setPage(newPage);
+  // };
+
+  const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
     setPage(newPage);
   };
-
+  
   const hasNextPage = () => {
     return employees.length === rowsPerPage && (page + 1) * rowsPerPage < totalCount;
   };
