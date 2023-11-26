@@ -1,6 +1,6 @@
 const Add = () => {
   return(
-    <h1>Add Employee </h1>
+    <h1>Add Employee Name</h1>
   )
 }
 
