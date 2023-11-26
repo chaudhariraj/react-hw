@@ -1,0 +1,33 @@
+
+
+/*============================================ 
+======== Table of Css Content =========
+# Typography
+# Normalize 
+# Global style
+# Header Area
+# Banner Area
+# Section Area
+# Footer Area
+============================================*/
+
+// default font family
+  @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;500;600;700&display=swap');
+
+// CSS Plugin import
+@import url("./vendor/font-awesome/css/fontawesome.min.css");
+@import url("./vendor/font-awesome/css/materialicons.css");
+// @import "../css/plugins/animate.min.css";
+
+// Bootstrap import
+@import url("./_bootstrap.scss");
+// Pages
+@import url("./pages/_banner-footer.scss");
+@import url("./pages/_section.scss");
+@import url("./pages/site.scss");
+@import url("./pages/video-player.scss");
+// Responsive Area
+@import url("./main/_responsive.scss");
+
+// Sass Global
+@import url("./main/_global.scss");
