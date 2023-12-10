@@ -102,7 +102,6 @@ const Login: React.FC = () => {
                         control={<Checkbox value="remember" color="primary" checked={rememberMe} onChange={handleRememberMeChange} />}
                         label="Remember me"
                     />
-
                     <Button
                         type="button"
                         fullWidth

@@ -1,6 +1,7 @@
 // import Button from '@mui/material/Button';
 import { Routes, Route } from 'react-router-dom';
 import { authProtectedRoutes } from './routes';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function App() {
   return (

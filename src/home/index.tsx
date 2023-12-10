@@ -17,11 +17,12 @@ interface Employee {
   salaryRevisionDate: string;
 }
 
+
 function Home() {
   const navigate = useNavigate();
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(8);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [totalCount, setTotalCount] = useState<number>(0);
 
   useEffect(() => {
@@ -43,23 +44,22 @@ function Home() {
       const data = await get(`/Employee?pageNum=${page + 1}&pageSize=${rowsPerPage}`);
       setEmployees(data?.result)
       setTotalCount(data?.result?.length); 
-      console.log("Fetched data:", data?.result?.length);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  // const handleChangePage = (event: unknown, newPage: number) => {
-  //   setPage(newPage);
-  // };
-
-  const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
+  const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
   };
-  
+
   const hasNextPage = () => {
     return employees.length === rowsPerPage && (page + 1) * rowsPerPage < totalCount;
   };
+
+  const addEmployee = () => {
+    navigate("/add")
+  }
   
   const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(parseInt(event.target.value, 10));
@@ -75,6 +75,7 @@ function Home() {
           type="button"
           variant="contained"
           color="primary"
+          onClick={addEmployee}
         >
           Add User
         </Button>
